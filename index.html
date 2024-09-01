@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Twitch Chat Overlay</title>
+    <title>Twitch Chat Link Generator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div id="chat-container">
-      <div id="chat"><!-- Le reste se passe dans index.js --></div>
+  <body class="bodyIndex">
+    <div>
+      <h1>Twitch Chat Link Generator</h1>
+      <input
+        type="text"
+        id="twitchChannelInput"
+        placeholder="Le nom de ta chaîne Twitch"
+      />
+      <button onclick="generateLink()">Générer le lien</button>
+      <p id="generatedLink"></p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/comfy.js/dist/comfy.min.js"></script>
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

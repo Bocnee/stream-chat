@@ -1,29 +1,19 @@
-const chatContainer = document.getElementById("chat-container");
-
-function addMessage(user, message, color) {
-  const messageElement = `
-    <div class="message">
-      <span style="color: ${color || "#000"};">${user}: </span>
-      ${message}
-    </div>
-  `;
-
-  chatContainer.insertAdjacentHTML("beforeend", messageElement);
-
-  // 
-  chatContainer.scrollLeft = chatContainer.scrollWidth;
+function generateLink() {
+  const twitchChannel = document
+    .getElementById("twitchChannelInput")
+    .value.trim();
+  if (twitchChannel) {
+    const link = `${
+      window.location.origin
+    }/overlay.html?channel=${encodeURIComponent(twitchChannel)}`;
+    const generatedLinkElement = document.getElementById("generatedLink");
+    generatedLinkElement.textContent = `Generated Link: ${link}`;
+    generatedLinkElement.innerHTML = `Generated Link: <a href="${link}" target="_blank">${link}</a>`;
+  }
 }
 
-ComfyJS.onChat = (user, message, flags, self, extra) => {
-  const color = extra.userColor || "#000";
-  addMessage(user, message, color);
-};
-
-ComfyJS.Init("Nom de la chaîne Twitch");
-
-// À décommenter pour faire des tests fictifs
-
-addMessage("ZeldaFan92", "Trop hâte de voir le prochain boss !", "#8A2BE2");
+// Test messages
+/* addMessage("ZeldaFan92", "Trop hâte de voir le prochain boss !", "#8A2BE2");
 addMessage(
   "GamerDudeX",
   "Est-ce que quelqu'un a déjà essayé cette stratégie ?",
