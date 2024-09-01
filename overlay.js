@@ -26,7 +26,7 @@ function addMessage(user, message, color) {
           }
         }, 500);
       }
-    }, 10000);
+    }, 100000);
   }
 }
 
