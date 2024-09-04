@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Twitch Chat Link Generator</title>
+    <title>Un simple chat horizontal</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="bodyIndex">
-    <div>
-      <h1>Twitch Chat Link Generator</h1>
-      <input
-        type="text"
-        id="twitchChannelInput"
-        placeholder="Le nom de ta chaîne Twitch"
-      />
-      <button onclick="generateLink()">Générer le lien</button>
-      <p id="generatedLink"></p>
-      <a href="./overlay.html">Ma chaîne</a>
+    <div class="container">
+      <div class="generatorContainer">
+        <h1 class="title">
+          Génère ton lien pour afficher un chat horizontal sur Twitch
+        </h1>
+        <input
+          type="text"
+          id="twitchChannelInput"
+          placeholder="Le nom de ta chaîne Twitch"
+          class="oval input"
+        />
+        <button onclick="generateLink()" class="oval button">
+          Générer le lien
+        </button>
+        <p id="generatedLink"></p>
+      </div>
+      <div class="exampleContainer"></div>
     </div>
     <script src="./index.js"></script>
   </body>
