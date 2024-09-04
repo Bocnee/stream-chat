@@ -79,6 +79,7 @@ button:hover {
 #generatedLink a:hover {
   text-decoration: underline;
 }
+
 #chat-container {
   display: flex;
   align-items: center;
